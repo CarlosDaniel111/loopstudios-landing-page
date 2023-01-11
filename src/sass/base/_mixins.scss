@@ -1,0 +1,54 @@
+/** Media Queries **/
+@mixin telefono {
+    @media (min-width: $telefono) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+  
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
+
+@mixin boton($color, $texto) {
+    background-color: $color;
+    padding: 1.5rem 3rem;
+    font-family: $fuente_titulos;
+    font-weight: 300;
+    text-align: center;
+    border-radius: 5rem;
+    color: $texto;
+    text-decoration: none;
+    transition: background-color .3s ease;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+        background-color: transparentize($color, 0.7);
+        color: $blanco;
+    }
+}
+
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+@mixin imagen($nombre){
+    background-image: url("../img/mobile/"+$nombre+".jpg");
+    background-size: cover;
+    background-position: center;
+
+    @include desktop { 
+        background-image: url("../img/desktop/"+$nombre+".jpg");
+    }
+}
