@@ -1,15 +1,10 @@
 import React from 'react'
+import { Header } from './components/Header'
 
 export const LoopStudiosApp = () => {
     return (
-        <div>
-            About
-            Careers
-            Events
-            Products
-            Support
-
-            Immersive experiences that deliver
+        <>
+            <Header />
 
             The leader in interactive VR
 
@@ -38,6 +33,6 @@ export const LoopStudiosApp = () => {
             Support
 
             © 2021 Loopstudios. All rights reserved.
-        </div>
+        </>
     )
 }

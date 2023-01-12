@@ -1,0 +1,22 @@
+.header{
+    @include imagen("image-hero");
+    height: 100vh;
+    
+    &__title{
+        margin-top: 14rem;
+        max-width: 60rem;
+        border: 2px solid $blanco;
+        padding: 2rem;
+
+        @include desktop{
+            padding: 3rem;
+        }
+    }
+
+    &__heading{
+        color: $blanco;
+        text-transform: uppercase;
+        margin: 0;
+        line-height: 1;
+    }
+}

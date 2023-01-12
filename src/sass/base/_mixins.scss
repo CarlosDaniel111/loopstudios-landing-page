@@ -44,11 +44,11 @@
 }
 
 @mixin imagen($nombre){
-    background-image: url("../img/mobile/"+$nombre+".jpg");
+    background-image: url("../../assets/mobile/"+$nombre+".jpg");
     background-size: cover;
     background-position: center;
 
     @include desktop { 
-        background-image: url("../img/desktop/"+$nombre+".jpg");
+        background-image: url("../../assets/desktop/"+$nombre+".jpg");
     }
 }

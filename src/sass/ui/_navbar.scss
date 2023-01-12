@@ -1,0 +1,88 @@
+.navbar{
+    padding: 2rem 0;
+
+    &--toggle{
+        background-color: $negro;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    &__flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+        position: relative;
+    }
+
+    &__navegacion{
+        display: flex;
+        flex-direction: column;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 18rem;
+        left: 0;
+
+        &--toogle{
+            height: auto;
+        }
+
+        @include desktop{
+            flex-direction: row;
+            height: auto;
+            padding: 0.5rem 0;
+            position: unset;
+            gap: 3rem;
+        }
+    }
+
+    &__enlace{
+        font-size: 3rem;
+        font-family: $fuente_titulos;
+        font-weight: 300;
+        line-height: 2;
+        text-transform: uppercase;
+        color: $gris;
+
+        &:hover{
+            color: $blanco;
+        }
+
+        @include desktop{
+            font-size: 1.5rem;
+            font-family: $fuente_parrafo;
+            font-weight: 400;
+            text-transform: unset;
+            color: $blanco;
+            position: relative;
+
+            &:after{
+                content: '';
+                height: 0.3rem;
+                width: 0px;
+                background-color: $blanco;
+                border-radius: 0.2rem;
+                position: absolute;
+                bottom: -5px;
+                left: 30%;
+                transition: width 0.3s;
+            }
+            &:hover{
+                &:after{
+                    width: 50%;
+                }
+            }
+        }
+    }
+
+    &__barra{
+        @include desktop{
+            display: none;
+        }
+    }
+}
