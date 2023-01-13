@@ -55,29 +55,7 @@
         }
 
         @include desktop{
-            font-size: 1.5rem;
-            font-family: $fuente_parrafo;
-            font-weight: 400;
-            text-transform: unset;
-            color: $blanco;
-            position: relative;
-
-            &:after{
-                content: '';
-                height: 0.3rem;
-                width: 0px;
-                background-color: $blanco;
-                border-radius: 0.2rem;
-                position: absolute;
-                bottom: -5px;
-                left: 30%;
-                transition: width 0.3s;
-            }
-            &:hover{
-                &:after{
-                    width: 50%;
-                }
-            }
+            @include enlace;
         }
     }
 

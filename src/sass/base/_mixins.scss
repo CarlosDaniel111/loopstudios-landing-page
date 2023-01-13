@@ -1,89 +1,117 @@
 /** Media Queries **/
 @mixin telefono {
-    @media (min-width: $telefono) {
-        @content;
-    }
+  @media (min-width: $telefono) {
+    @content;
+  }
 }
 
 @mixin tablet {
-    @media (min-width: $tablet) {
-        @content;
-    }
-}
-  
-@mixin desktop {
-    @media (min-width: $desktop) {
-        @content;
-    }
+  @media (min-width: $tablet) {
+    @content;
+  }
 }
 
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
 
 @mixin boton() {
+  background-color: $blanco;
+  padding: 1.5rem 5rem 1rem 5rem;
+  font-family: $fuente_titulos;
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.3rem;
+  text-align: center;
+  border: 2px solid $negro;
+  color: $negro;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $negro;
+    color: $blanco;
+  }
+}
+
+@mixin grid($columnas, $espaciado) {
+  display: grid;
+  gap: $espaciado;
+  grid-template-columns: repeat($columnas, 1fr);
+}
+
+@mixin imagen($nombre) {
+  background-image: url("../../assets/mobile/" + $nombre + ".jpg");
+  background-size: cover;
+  background-position: center;
+
+  @include desktop {
+    background-image: url("../../assets/desktop/" + $nombre + ".jpg");
+  }
+}
+
+@mixin imagen-with-hover($nombre) {
+  background-image: url("../../assets/mobile/" + $nombre + ".jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  @include desktop {
+    background-image: url("../../assets/desktop/" + $nombre + ".jpg");
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+
+  &:hover {
+    cursor: pointer;
+    &:before {
+      background-color: transparentize($gris, 0.2);
+    }
+
+    h3 {
+      color: $negro;
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
+@mixin enlace {
+  font-size: 1.5rem;
+  font-family: $fuente_parrafo;
+  font-weight: 400;
+  text-transform: unset;
+  color: $blanco;
+  position: relative;
+
+  &:after {
+    content: "";
+    height: 0.3rem;
+    width: 0px;
     background-color: $blanco;
-    padding: 1.5rem 5rem 1rem 5rem;
-    font-family: $fuente_titulos;
-    font-size: 1.8rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    line-height: 1;
-    letter-spacing: 0.3rem;
-    text-align: center;
-    border: 2px solid $negro;
-    color: $negro;
-    text-decoration: none;
-    transition: background-color .3s ease;
-
-    &:hover {
-        cursor: pointer;
-        background-color: $negro;
-        color: $blanco;
+    border-radius: 0.2rem;
+    position: absolute;
+    bottom: -5px;
+    left: 30%;
+    transition: width 0.3s;
+  }
+  &:hover {
+    &:after {
+      width: 50%;
     }
-}
-
-@mixin grid($columnas, $espaciado ) {
-    display: grid;
-    gap: $espaciado;
-    grid-template-columns: repeat($columnas, 1fr);
-}
-
-@mixin imagen($nombre){
-    background-image: url("../../assets/mobile/"+$nombre+".jpg");
-    background-size: cover;
-    background-position: center;
-
-    @include desktop { 
-        background-image: url("../../assets/desktop/"+$nombre+".jpg");
-    }
-}
-
-@mixin imagen-with-hover($nombre){
-    background-image: url("../../assets/mobile/"+$nombre+".jpg");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-
-    @include desktop { 
-        background-image: url("../../assets/desktop/"+$nombre+".jpg");
-    }
-
-    &:hover{
-        cursor: pointer;
-
-        &::before{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: transparentize($gris, 0.2);
-        }
-
-        h3{
-            color: $negro;
-            position: relative;
-            z-index: 2;
-        }
-    }
-    
+  }
 }
