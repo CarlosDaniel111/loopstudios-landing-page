@@ -1,0 +1,52 @@
+.principal{
+
+    margin: 10rem 0;
+    position: relative;
+
+    @include desktop{
+        margin: 15rem 0;
+    }
+
+    &__image{
+        @include imagen("image-interactive");
+        height: 28rem;
+
+        @include desktop{
+            background-image: url("../../assets/desktop/image-interactive.jpg"), transparent;
+            background-size: 70%, 30%;
+            background-repeat: no-repeat;
+            background-position: left, right;
+            height: 55rem;
+        }
+    }
+
+    &__card{
+        margin-top: 5rem;
+        text-align: center;
+        @include desktop{
+            margin: 0;
+            width: 50%;
+            background-color: $blanco;
+            padding: 10rem 0 0 10rem;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    &__heading{
+        font-size: 4rem;
+        @include desktop{
+            text-align: left;
+            font-size: 4.5rem;
+        }
+    }
+
+    &__parrafo{
+        margin: 0;
+        @include desktop{
+            text-align: left;
+            font-size: 1.7rem;
+        }
+    }
+}

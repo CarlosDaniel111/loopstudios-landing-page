@@ -1,0 +1,45 @@
+.creation{
+
+    padding: 10rem 50% 2rem 2rem;
+
+    @include desktop{
+        padding: 35rem 30% 2rem 2rem;
+    }
+
+    &__image1{
+        @include imagen-with-hover("image-deep-earth");
+    }
+    &__image2{
+        @include imagen-with-hover("image-night-arcade");
+    }
+    &__image3{
+        @include imagen-with-hover("image-soccer-team");
+    }
+    &__image4{
+        @include imagen-with-hover("image-grid");
+        @include desktop{
+            padding-right: 70%
+        }
+    }
+    &__image5{
+        @include imagen-with-hover("image-from-above");
+    }
+    &__image6{
+        @include imagen-with-hover("image-pocket-borealis");
+    }
+    &__image7{
+        @include imagen-with-hover("image-curiosity");
+    }
+    &__image8{
+        @include imagen-with-hover("image-fisheye");
+    }
+
+    &__title{
+        color: $blanco;
+        margin: 0;
+
+        @include desktop{
+            font-size: 3rem;
+        }
+    }
+}

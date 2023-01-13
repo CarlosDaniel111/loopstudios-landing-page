@@ -1,0 +1,55 @@
+.creations{
+
+    &__header{
+        margin: 7rem 0;
+
+        @include desktop{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__heading{
+        text-align: center;
+        font-size: 4rem;
+        margin: 0;
+
+        @include desktop{
+            font-size: 4.5rem;
+        }
+    }
+
+    &__boton1{
+        display: none;
+
+        @include desktop{
+            display: unset;
+            @include boton;
+        }
+    }
+
+
+    &__grid{
+        @include grid(1,3rem);
+
+        @include desktop{
+            @include grid(4,3rem);
+        }
+    }
+
+    &__boton-mobile{
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+        margin-bottom: 8rem;
+    }
+
+    &__boton2{
+        @include boton;
+
+        @include desktop{
+            display: none;
+        }
+    }
+}

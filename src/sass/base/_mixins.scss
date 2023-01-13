@@ -18,21 +18,24 @@
 }
 
 
-@mixin boton($color, $texto) {
-    background-color: $color;
-    padding: 1.5rem 3rem;
+@mixin boton() {
+    background-color: $blanco;
+    padding: 1.5rem 5rem 1rem 5rem;
     font-family: $fuente_titulos;
+    font-size: 1.8rem;
     font-weight: 300;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 0.3rem;
     text-align: center;
-    border-radius: 5rem;
-    color: $texto;
+    border: 2px solid $negro;
+    color: $negro;
     text-decoration: none;
     transition: background-color .3s ease;
-    border: none;
 
     &:hover {
         cursor: pointer;
-        background-color: transparentize($color, 0.7);
+        background-color: $negro;
         color: $blanco;
     }
 }
@@ -51,4 +54,36 @@
     @include desktop { 
         background-image: url("../../assets/desktop/"+$nombre+".jpg");
     }
+}
+
+@mixin imagen-with-hover($nombre){
+    background-image: url("../../assets/mobile/"+$nombre+".jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    @include desktop { 
+        background-image: url("../../assets/desktop/"+$nombre+".jpg");
+    }
+
+    &:hover{
+        cursor: pointer;
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: transparentize($gris, 0.2);
+        }
+
+        h3{
+            color: $negro;
+            position: relative;
+            z-index: 2;
+        }
+    }
+    
 }
